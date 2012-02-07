@@ -2,19 +2,18 @@
 <html>
   <head>
     <title><%@title %></title>
-	<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-    <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
-	<%= stylesheet_link_tag 'custom', :media => 'screen' %>
     <%= csrf_meta_tag %>
+	<%=render 'layouts/stylesheets'%>
   </head>
   <body>
     <div class="container">
       <header>
-        <%= image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+        <% logo = image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+        <%= link_to logo, root_path %>
         <nav class="round">
           <ul>
-            <li><%= link_to "Home", '#' %></li>
-            <li><%= link_to "Help", '#' %></li>
+            <li><%= link_to "Home", 'root_path' %></li>
+            <li><%= link_to "Help", 'help_path' %></li>
             <li><%= link_to "Sign in", '#' %></li>
           </ul>
         </nav>
@@ -22,6 +21,16 @@
       <section class="round">
         <%= yield %>
       </section>
+	  <footer>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Contact", '#' %></li>
+      <li><a href="http://news.railstutorial.org/">News</a></li>
+      <li><a href="http://www.railstutorial.org/">Rails Tutorial</a></li>
+    </ul>
+  </nav>
+</footer>
     </div>
   </body>
 </html>

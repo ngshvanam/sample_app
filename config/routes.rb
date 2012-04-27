@@ -4,7 +4,7 @@ SampleApp::Application.routes.draw do
 
 
   get "users/home"
-
+  post "users/home"
 
   match '/home', :to => 'users#home'
   

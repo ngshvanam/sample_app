@@ -10,7 +10,7 @@ def home
 	 redirect_to "https://www.facebook.com/dialog/oauth/?client_id=268196199939502&redirect_uri=https%3A%2F%2Fapps.facebook.com%2Fnag_app%2F&scope=user_location,user_likes,friends_likes"
 	else
 	 if @response.nil?
-	  redirect_to "https://graph.facebook.com/oauth/access_token?client_id=268196199939502&redirect_uri=https%3A%2F%2Fapps.facebook.com%2Fnag_app%2F&client_secret=6d849aa8ae2779bb804ecb8d7724df8d&code="+ @response
+	  redirect_to "https://graph.facebook.com/oauth/access_token?client_id=268196199939502&redirect_uri=https%3A%2F%2Fapps.facebook.com%2Fnag_app%2F&client_secret=6d849aa8ae2779bb804ecb8d7724df8d&code="+ @code
 	 end
 	end
   else

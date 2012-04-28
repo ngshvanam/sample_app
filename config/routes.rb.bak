@@ -2,9 +2,13 @@ SampleApp::Application.routes.draw do
   
   get "users/home"
   post "users/home"
+  get "users/page"
+  
 
   match '/home', :to => 'users#home'
-  
+  match '/page', :to => 'users#page'
+
+
  # root :to => 'pages#home'
 
   # The priority is based upon order of creation:

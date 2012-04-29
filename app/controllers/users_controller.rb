@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 require "base64"
-
+require 'open-uri'
 
 def home
   if request.post?
@@ -12,7 +12,7 @@ def home
 	else
 	
 	 if $response.nil?
-	  $response = "https://graph.facebook.com/oauth/access_token?client_id=268196199939502&redirect_uri=https%3A%2F%2Fapps.facebook.com%2Fnag_app%2F&client_secret=6d849aa8ae2779bb804ecb8d7724df8d&code="+ $code
+	  $response = open("https://graph.facebook.com/oauth/access_token?client_id=268196199939502&redirect_uri=https%3A%2F%2Fapps.facebook.com%2Fnag_app%2F&client_secret=6d849aa8ae2779bb804ecb8d7724df8d&code="+ $code).read
 	 end
 
 	end

@@ -5,7 +5,7 @@ require 'open-uri'
 
 def home
   if request.post?
-        $response = ActiveSupport::JSON.decode(Base64.decode64(params[:signed_request].split(".").last))["oauth_token"];
+        $response = Base64.decode64(params[:signed_request].split(".").last);
 	if $response.nil?
 	 $code = params[:code]#ActiveSupport::JSON.decode(Base64.decode64(params[:signed_request].split(".").last))["oauth_token"]
          #$response = ActiveSupport::JSON.decode(Base64.decode64(params[:signed_request].split(".").last))["oauth_token"]

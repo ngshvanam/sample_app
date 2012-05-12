@@ -11,7 +11,9 @@
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
   oauth_url += '?client_id=268196199939502';
   oauth_url += '&redirect_uri=' + encodeURIComponent('https://apps.facebook.com/nag_app/');
-  oauth_url += '&scope=user_location,user_likes,friends_likes,user_about_me'
+  oauth_url += '&scope=read_friendlists,read_insights,read_mailbox,read_requests,read_stream,\
+			xmpp_login,ads_management,create_event,manage_friendlists,manage_notifications,\
+			user_online_presence,friends_online_presence,publish_checkins,publish_stream,rsvp_event'
   window.top.location = oauth_url;
 <%end%>
 

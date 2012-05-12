@@ -8,6 +8,7 @@
 <script>
 
 <%if $response.nil? %>
+
   var oauth_url = 'https://www.facebook.com/dialog/oauth/';
   oauth_url += '?client_id=268196199939502';
   oauth_url += '&redirect_uri=' + encodeURIComponent('https://apps.facebook.com/nag_app/');
